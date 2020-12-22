@@ -1,0 +1,62 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light shadow" style="background-color: #000000;">
+  <a class="navbar-brand" routerLink="home" style="color: #be1212">Netflix</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" routerLinkActive="active">
+      <li class="nav-item">
+        <a style="color: white" class="nav-link" [routerLink]='["/login"]'>Log in</a>
+      </li>
+      <li class="nav-item">
+        <a style="color: white" class="nav-link" [routerLink]='["/register"]'>Sign up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="centered">
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)" class="form-signin" align="center">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <input type="text" #nameRef="ngModel" required class="form-control" placeholder="First name" name="firstname"
+                 [(ngModel)]="userDetails.firstName">
+          <div [hidden]="nameRef.valid || nameRef.pristine" class="alert alert-danger">Please enter a name</div>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name" name="lastname"
+                 [(ngModel)]="userDetails.lastName">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="email" #emailRef="ngModel" required class="form-control" id="exampleInputEmail1"
+             aria-describedby="emailHelp"
+             placeholder="Enter email" name="email" [(ngModel)]="userDetails.email">
+      <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">Please enter an email</div>
+      <div *ngIf="!regEmail" class="alert alert-danger">Email already registered</div>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <input type="password" #passwordRef="ngModel" required class="form-control" id="exampleInputPassword1"
+             placeholder="Password"
+             name="password" [(ngModel)]="userDetails.password">
+      <div [hidden]="passwordRef.valid || passwordRef.pristine" class="alert alert-danger">Create a password</div>
+    </div>
+    <div class="form-group">
+      <input type="password" #passwordConRef="ngModel" required class="form-control" id="exampleInputPassword2"
+             placeholder="Confirm Password"
+             name="passwordCon" [(ngModel)]="passwordCon">
+      <div [hidden]="passwordConRef.valid || passwordConRef.pristine" class="alert alert-danger">Confirmation of
+        password is required
+      </div>
+      <div *ngIf="!didMatch" class="alert alert-danger">Password doesn't match</div>
+    </div>
+    <input class="btn btn-lg btn-primary btn-block submit-button" type="submit" value="Create Account">
+  </form>
+</div>
+

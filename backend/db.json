@@ -1,0 +1,31 @@
+{
+  "watchlist": [
+    {
+      "firstName": "Daryn",
+      "moviePoster": "/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
+      "movieTitle": "Tenet",
+      "movieOverview": "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+      "movieRelease": "2020-08-22",
+      "movieRate": 7.4,
+      "id": 2
+    },
+    {
+      "firstName": "Daryn",
+      "moviePoster": "/tK1zy5BsCt1J4OzoDicXmr0UTFH.jpg",
+      "movieTitle": "The Croods: A New Age",
+      "movieOverview": "After leaving their cave, the Croods encounter their biggest threat since leaving: another family called the Bettermans, who claim and show to be better and evolved. Grug grows suspicious of the Betterman parents, Phil and Hope,  as they secretly plan to break up his daughter Eep with her loving boyfriend Guy to ensure that their daughter Dawn has a loving and smart partner to protect her.",
+      "movieRelease": "2020-11-25",
+      "movieRate": 8.1,
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Daryn Updated",
+      "lastName": "Nurlan",
+      "email": "daryn@gmail.com",
+      "password": "qwerty"
+    }
+  ]
+}

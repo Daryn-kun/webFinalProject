@@ -1,0 +1,10 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <div class="body" style="margin-top: 25rem;">
+    <app-slider title="Trending" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Top Rated" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Originals" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Popular" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {Movies} from '../model/movies';
+import {Movie} from '../model/movie';
 const enum endpoint{
   latest = '/movie/latest',
   now_playing = '/movie/now_playing',
@@ -64,6 +65,13 @@ export class MovieService {
 
   getTrending(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.trending}`, {
+      params: {
+        api_key: this.api_key
+      }
+    });
+  }
+  getMovieFromList(id: number): Observable<Movie>{
+    return this.http.get<Movie>(`${this.URL}${'/movie/' + id}`, {
       params: {
         api_key: this.api_key
       }

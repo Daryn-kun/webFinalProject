@@ -25,3 +25,44 @@ img {
     }
   }
 }
+iframe{
+  margin: auto;
+  max-width: 800px;
+  display: block;
+}
+.details{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.blockDetails{
+  max-width: 600px;
+  margin: 10px;
+
+}
+button.add-button {
+  span {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  mat-icon {
+    transform: scale(1.5);
+  }
+}
+button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 20px;
+  padding: 15px 30px; // TOP BOTTOM = 15px,  RIGHT LEFT = 40px
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+
+  mat-icon {
+    transform: scale(1.25);
+  }
+}

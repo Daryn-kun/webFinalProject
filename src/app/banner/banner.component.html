@@ -1,0 +1,18 @@
+<div class="header__banner"
+     [ngStyle]="{
+      'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('+headerBGUrl+')'
+      }">
+  <h2>{{trending?.results[0].title}}</h2>
+  <div class="header__buttons">
+
+    <button class="play-button">
+      <mat-icon>arrow_right</mat-icon>
+      <span>Play</span>
+    </button>
+
+    <button class="more-button">
+      <mat-icon>info</mat-icon>
+      <span>More Info</span>
+    </button>
+  </div>
+</div>

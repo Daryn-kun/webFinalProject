@@ -1,1 +1,40 @@
-<p>navbar works!</p>
+<div class="header">
+  <app-banner></app-banner>
+  <div class="header__main" id="stickyHeader" [class.sticky]="sticky" #stickHeader>
+    <div class="header__left">
+      <a [routerLink]="['/home']">
+        <img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg" alt="logo">
+      </a>
+      <ul class="navbar-nav" routerLinkActive="active">
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/home']">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">TV Shows</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Latest</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/mylist']">My List</a></li>
+      </ul>
+    </div>
+
+    <div class="header__right">
+      <ul>
+        <li><a href="#">
+          <mat-icon>search</mat-icon>
+        </a></li>
+        <li><a href="#">Teenager</a></li>
+        <li><a href="#">
+          <mat-icon>card_giftcard</mat-icon>
+        </a></li>
+        <li><a href="#">
+          <mat-icon>notifications</mat-icon>
+        </a></li>
+        <li>
+          <img
+            src="https://occ-0-4345-3647.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABRGTK96GBeqNw5zzYXnoa8oVjSjhuk7SuseuKTmgEKwpcCB59994UWb6wd7d1WONZOuzJwbLNpzG5Okfo4rSDLg.png?r=ee6"
+            alt="avatar">
+        </li>
+        <li *ngIf="reg$">
+          <a (click)="logOut()" class="nav-link">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

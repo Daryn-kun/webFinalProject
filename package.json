@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "json:server": "json-server --watch backend/db.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
     "jquery": "^3.5.1",
+    "movie-trailer": "^2.0.6",
     "ngx-slick-carousel": "^0.5.1",
     "rxjs": "~6.5.5",
     "slick-carousel": "^1.8.1",

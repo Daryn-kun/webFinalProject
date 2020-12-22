@@ -1,0 +1,37 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <div class="body" style="margin-top: 25rem;">
+
+    <h2>My List</h2>
+
+    <div class="movie">
+      <div class="movie__images">
+        <div class="thumbnails">
+          <ngx-slick-carousel [config]="sliderConfig" class="carousel">
+            <div class="slick-item" *ngFor="let m of Watchlist">
+              <img src="https://image.tmdb.org/t/p/w200{{m?.moviePoster}}" alt="{{m.movieTitle}}"
+                   (click)="showMovie(m.movieTitle, m.movieOverview, m.id, m.movieRelease, m.movieRate)">
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+    </div>
+
+    <div class="details" *ngIf="movieSelected" style="color: white">
+      <div class="blockDetails">
+        <h1>{{selected.title | naturalType}}</h1>
+        <h3>{{selected.release_date | naturalType}} | Rating {{selected.vote_average | naturalType}}</h3>
+        <p>{{selected.overview | naturalType}}</p>
+        <button class="add-button" (click)="deleteFromList(selected.id)">
+          <mat-icon>delete</mat-icon>
+          <span>Delete from List</span>
+        </button>
+      </div>
+      <div class="blockDetails">
+        <iframe *ngIf="selectedTrailer" id="player" type="text/html" width="600" height="360"
+                [src]="selectedTrailer"
+                frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
